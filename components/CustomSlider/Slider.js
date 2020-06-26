@@ -1,12 +1,18 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import Animated from "react-native-reanimated";
 import SliderView from "./SliderView";
 import Knob from "./Knob";
 
-const { Value, max, add } = Animated;
+const { Value, max, add, round, concat, divide } = Animated;
 
-function Slider({ SliderWidth, SliderHeight, TotalCount, knobWidth }) {
+function Slider({
+  SliderWidth,
+  SliderHeight,
+  TotalCount,
+  knobWidth,
+  changeVal,
+}) {
   const count = TotalCount;
   const width = SliderWidth / count;
   const height = width;
@@ -21,7 +27,7 @@ function Slider({ SliderWidth, SliderHeight, TotalCount, knobWidth }) {
     },
   });
   const x = new Value(0);
-  //console.log(x);
+
   return (
     <View style={styles.container}>
       <Animated.View
@@ -43,6 +49,7 @@ function Slider({ SliderWidth, SliderHeight, TotalCount, knobWidth }) {
         knobHeight={SliderHeight}
         knobWidth={knobWidth}
         {...{ x, count }}
+        changeVal={changeVal}
       />
     </View>
   );
