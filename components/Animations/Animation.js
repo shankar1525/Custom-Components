@@ -64,16 +64,37 @@ function AnimationScreen() {
           alignItems: "center",
         }}
         onPress={() => {
+          let data = [];
           for (let i = 0; i < 40; i++) {
-            Animated.loop(
+            data.push(
               Animated.timing(arrayVal[i].name, {
                 toValue: 20,
                 duration: 500,
                 easing: Easing.ease,
-              }),
-              { resetBeforeIteration: true, iterations: 100 }
-            ).start();
+              })
+            );
+            data.push(
+              Animated.timing(arrayVal[i].name, {
+                toValue: 10,
+                duration: 500,
+                easing: Easing.ease,
+              })
+            );
           }
+          Animated.loop(Animated.sequence([...data]), {
+            // resetBeforeIteration: true,
+          }).start();
+          // Animated.loop(
+          //   Animated.sequence([
+
+          //   Animated.timing(arrayVal[i].name, {
+          //     toValue: 20,
+          //     duration: 500,
+          //     easing: Easing.ease,
+          //   }),
+          // ]),
+          //   { resetBeforeIteration: true }
+          // ).start();
         }}
       >
         <Text style={{ color: "white" }}>Change</Text>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import Slider from "./components/CustomSlider/Slider";
 import Chart from "./components/CustomCharts/Chart";
-import AnimationScreen from "./components/Animations/Animation";
+// import AnimationScreen from "./components/Animations/Animation";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 export default function App() {
@@ -11,9 +11,14 @@ export default function App() {
     console.log(val);
     // setValue(val);
   }
+  let values = [60, 50, 40, 50, 60, 70, 80, 70, 60, 50, 40, 40];
   return (
     <View style={styles.container}>
-      {/* <Chart chartWidth={width * 0.8} chartHeight={height * 0.5}></Chart> */}
+      <Chart
+        chartWidth={width * 0.8}
+        chartHeight={height * 0.5}
+        values={values}
+      ></Chart>
       {/* <Slider
         SliderWidth={width * 0.5}
         SliderHeight={height * 0.1}
@@ -21,7 +26,7 @@ export default function App() {
         knobWidth={width * 0.07}
         changeVal={changeSliderValue}
       /> */}
-      <AnimationScreen />
+      {/* <AnimationScreen /> */}
     </View>
   );
 }
