@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import Slider from "./components/CustomSlider/Slider";
 import Chart from "./components/CustomCharts/Chart";
+// import Flow from "./components/Flow";
 // import AnimationScreen from "./components/Animations/Animation";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -11,13 +12,16 @@ export default function App() {
     console.log(val);
     // setValue(val);
   }
-  let values = [60, 50, 40, 50, 60, 70, 80, 70, 60, 50, 40, 40];
+  let values = [55, 50, 48, 45, 52, 55, 60, 62, 58, 53, 48, 45, 40];
+  let solarValues = [10, 15, 15, 20, 30, 80, 95, 80, 30, 15, 15, 10, 10];
   return (
     <View style={styles.container}>
+      {/* <Flow /> */}
       <Chart
         chartWidth={width * 0.8}
         chartHeight={height * 0.5}
         values={values}
+        solarValues={solarValues}
       ></Chart>
       {/* <Slider
         SliderWidth={width * 0.5}
