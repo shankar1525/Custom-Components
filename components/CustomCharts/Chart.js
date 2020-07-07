@@ -11,7 +11,12 @@ function Chart(props) {
         height: props.chartHeight,
       }}
     >
-      <Body values={props.values} solarValues={props.solarValues}></Body>
+      <Body
+        values={props.values}
+        solarValues={props.solarValues}
+        widthS={props.width}
+        heightS={props.height}
+      ></Body>
       {/* <Footer></Footer> */}
     </View>
   );

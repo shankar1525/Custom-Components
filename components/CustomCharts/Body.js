@@ -13,9 +13,9 @@ const colors = {
   bars: "#15AD13",
 };
 const { Shape } = ART;
-function Body({ values, solarValues }) {
-  const SVGHeight = height * 0.6;
-  const SVGWidth = width * 0.8;
+function Body({ values, solarValues, widthS, heightS }) {
+  const SVGHeight = heightS;
+  const SVGWidth = widthS;
   const graphHeight = SVGHeight;
   const graphWidth = SVGWidth;
   const data = values;

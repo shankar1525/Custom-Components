@@ -22,6 +22,8 @@ export default function App() {
         chartHeight={height * 0.5}
         values={values}
         solarValues={solarValues}
+        width={width * 0.8}
+        height={height * 0.6}
       ></Chart>
       {/* <Slider
         SliderWidth={width * 0.5}
